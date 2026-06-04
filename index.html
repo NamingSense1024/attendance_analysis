@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/include.js"></script>
+
+    <style>
+        .btn-active{
+            background-color: rgb(17 24 39);
+            color: rgb(249 250 251);
+        }
+        .subbtn-active{
+            background-color: rgb(75 85 99);
+            color: rgb(249 250 251);
+        }
+        .tab{
+            opacity: 0;
+            pointer-events: none;
+            display: none;
+        }
+        .tab.tab-active{
+            opacity: 1;
+            pointer-events: all;
+            display: block;
+        }
+
+        .subtab{
+            opacity: 0;
+            pointer-events: none;
+            display: none;
+        }
+        .subtab.tab-active{
+            opacity: 1;
+            pointer-events: all;
+            display: grid;
+        }
+    </style>
+
+  </head>
+  <body class="bg-gray-50">
+    <header id="header" class="sticky top-0 z-50 h-16 md:h-20 bg-gray-900"></header>
+
+    <section class="py-8 md:py-16">
+        
+    </section>
+
+  </body>
+</html>
