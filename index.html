@@ -5,44 +5,40 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/include.js"></script>
 
-    <style>
-        .btn-active{
-            background-color: rgb(17 24 39);
-            color: rgb(249 250 251);
-        }
-        .subbtn-active{
-            background-color: rgb(75 85 99);
-            color: rgb(249 250 251);
-        }
-        .tab{
-            opacity: 0;
-            pointer-events: none;
-            display: none;
-        }
-        .tab.tab-active{
-            opacity: 1;
-            pointer-events: all;
-            display: block;
-        }
+    <script type="module" src="js/index.js"></script>
 
-        .subtab{
-            opacity: 0;
-            pointer-events: none;
-            display: none;
-        }
-        .subtab.tab-active{
-            opacity: 1;
-            pointer-events: all;
-            display: grid;
-        }
+    <style>
+
     </style>
 
   </head>
-  <body class="bg-gray-50">
-    <header id="header" class="sticky top-0 z-50 h-16 md:h-20 bg-gray-900"></header>
+  <body class="bg-gray-100 text-gray-900">
+    <header id="header" class="sticky top-0 z-50 h-16 md:h-20 bg-indigo-700"></header>
 
-    <section class="py-8 md:py-16">
-        
+    <section class="px-6 py-8 md:py-16 space-y-8">
+        <h1 class="text-lg font-semibold">トップ</h1>
+
+        <div class="px-8 py-8 bg-gray-50 border-[1px] border-gray-200 rounded-lg space-y-4">
+            <h2 class="text-base font-semibold">要注意人物</h2>
+
+            <div class="grid grid-cols-[48px_1fr_64px] items-center gap-4 px-4 hover:bg-gray-50">
+                <div class="text-center">
+                    学年
+                </div>
+
+                <p class="">
+                    氏名
+                </p>
+
+                <p class="text-right">
+                    スコア
+                </p>
+            </div>
+
+            <ul id="card-container" class="divide-y divide-gray-200">
+                <!-- ここに個人のカードが並ぶ -->
+            </ul>
+        </div>
     </section>
 
   </body>

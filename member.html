@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/include.js"></script>
+    <script type="module" src="js/member.js"></script>
+
+    <style>
+    .ac-content{
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.2s ease-out;
+    }
+    .ac-open{
+       grid-template-rows: 1fr;
+    }
+    .ver {
+        transition: transform 0.2s ease-out;
+        transform-origin: center;
+    }
+
+    .icon.open .ver {
+        transform: rotate(90deg);
+    }
+    </style>
+
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <header id="header" class="sticky top-0 z-50 h-16 md:h-20 bg-indigo-700"></header>
+
+    <section class="px-6 py-8 md:py-16 space-y-8">
+        <h1 class="text-lg font-semibold">メンバー</h1>
+
+        <div class="space-y-2">
+            <p class="w-fit text-gray-50 text-xl px-4 bg-indigo-500 rounded-full">
+                <span id="grade">N</span>
+                <span>年</span>
+            </p>
+            <p id="name" class="text-3xl font-semibold">
+                名前
+            </p>
+        </div>
+
+        <div class="px-4 py-4 bg-gray-50 rounded-md shadow-md">
+            <h2 class="text-indigo-500 text-2xl font-bold">SUMMARY</h2>
+            <div class="grid grid-cols-2 items-center gap-y-2 px-2 py-4">
+                <p class="text-lg">
+                    出席率
+                </p>
+                <p class="text-3xl font-semibold text-end">
+                    <span id="attendance-rate">X</span>
+                    <span class="text-lg">%</span>
+                </p>
+
+                <p class="text-lg">
+                    変化率
+                </p>
+                <p class="text-3xl font-semibold text-end">
+                    <span id="change-rate">X</span>
+                    <span class="text-lg">%</span>
+                </p>
+
+                <p class="text-lg">
+                    連続欠席
+                </p>
+                <p class="text-3xl font-semibold text-end">
+                    <span id="absence-consecutive">N</span>
+                    <span class="text-lg">回</span>
+                </p>
+            </div>
+
+            <div class="ac-button flex items-center justify-end py-2">
+                <div class="flex items-center justify-center gap-2">
+                    <p class="text-gray-600 text-base">
+                        詳細
+                    </p>
+                    <div class="icon relative size-8 border-2 border-gray-500 rounded-full">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90">
+                            <div class="ver w-4 h-0.5 bg-gray-500 rounded-full"></div>
+                        </div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <div class="hori w-4 h-0.5 bg-gray-500 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ac-content"> 
+                <div class="overflow-hidden">
+                    <div class="grid grid-cols-2 items-center gap-y-2 px-2 py-4">
+                        <p>
+                            出席回数
+                        </p>
+                        <p class="text-end">
+                            <span id="attendance-count">N</span>
+                            <span>回</span>
+                        </p>
+                        <p>
+                            直近3回
+                        </p>
+                        <p class="text-end">
+                            <span id="last-three">N</span>
+                            <span>回</span>
+                        </p>        
+                    </div>
+
+                    <div class="grid grid-cols-2 items-center gap-y-2 px-2 py-4">                 
+                        <p>
+                            最終出席
+                        </p>
+                        <p class="text-end">
+                            <span id="last-attendance">N</span>
+                            <span></span>
+                        </p>
+                        <p>
+                            経過日数
+                        </p>
+                        <p class="text-end">
+                            <span id="count-from-last">N</span>
+                            <span>日</span>
+                        </p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+        <div class="px-4 py-4 bg-gray-50 rounded-md shadow-md">
+            <h2 class="text-indigo-500 text-2xl font-bold">SCORE</h2>
+            <div class="py-4">
+                <p id="total-score" class="text-3xl font-semibold text-end">
+                    0
+                </p>
+            </div>
+
+            <div class="ac-button flex items-center justify-end py-2">
+                <div class="flex items-center justify-center gap-2">
+                    <p class="text-gray-600 text-base">
+                        詳細
+                    </p>
+                    <div class="icon relative size-8 border-2 border-gray-500 rounded-full">
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-90">
+                            <div class="ver w-4 h-0.5 bg-gray-500 rounded-full"></div>
+                        </div>
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <div class="hori w-4 h-0.5 bg-gray-500 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ac-content">  
+                <div class="overflow-hidden">      
+                    <div class="flex flex-col px-4 bg-gray-200 rounded-md divide-y-2 divide-gray-300 text-sm">
+                        <div class="py-4">
+                            <h3 class="text-base font-semibold">正スコア</h3>
+                            <div class="grid grid-cols-2 items-center gap-y-2 px-2 py-4">
+                                <p>
+                                    長期
+                                </p>
+                                <p id="plus-long-term" class="text-end">
+                                    0.0
+                                </p>
+                                <p>
+                                    直近3回
+                                </p>
+                                <p id="plus-last-three" class="text-end">
+                                    0.0
+                                </p>
+                                <p>
+                                    連続欠席
+                                </p>
+                                <p id="plus-absence-consecutive" class="text-end">
+                                    0.0
+                                </p>
+                                <p>
+                                    変化率
+                                </p>
+                                <p id="plus-change-rate" class="text-end">
+                                    0.0
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="py-4">
+                            <h3 class="text-base font-semibold">負スコア</h3>
+                            <div class="grid grid-cols-2 items-center gap-y-2 px-2 py-4">
+                                <p>
+                                    長期
+                                </p>
+                                <p id="minus-long-term" class="text-end">
+                                    0.0
+                                </p>
+                                <p>
+                                    直近3回
+                                </p>
+                                <p id="minus-last-three" class="text-end">
+                                    0.0
+                                </p>                               
+                                <p>
+                                    変化率
+                                </p>
+                                <p id="minus-change-rate" class="text-end">
+                                    0.0
+                                </p>
+                            </div>
+                        </div>
+                        
+
+                        <div class="py-4">
+                            <h3 class="text-base font-semibold">補正</h3>
+                            <div class="grid grid-cols-2 items-center gap-y-2 px-2 py-4">
+                                <p>
+                                    学年
+                                </p>
+                                <p id="offset-grade" class="text-end">
+                                    0.0
+                                </p>
+                            </div>
+                        </div>   
+                    </div>
+                </div>  
+            </div>
+        </div>
+
+        <div class="px-4 py-4 bg-gray-50 rounded-md shadow-md">
+            <h2 class="text-indigo-500 text-2xl font-bold">ATTENDANCE</h2>
+            <div id="date-card-container" class="flex flex-col items-center gap-2 w-full px-2 py-4">
+                <!-- ここに出席のカードが並ぶ -->
+            </div>
+        </div>
+
+    </section>
+
+  </body>
+</html>
