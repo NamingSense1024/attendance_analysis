@@ -7,6 +7,7 @@
     <script type="module" src="js/member.js"></script>
 
     <style>
+
     .ac-content{
         display: grid;
         grid-template-rows: 0fr;
@@ -32,8 +33,8 @@
     <section class="px-6 py-8 md:py-16 space-y-8">
         <h1 class="text-lg font-semibold">メンバー</h1>
 
-        <div class="space-y-2">
-            <p class="w-fit text-gray-50 text-xl px-4 bg-indigo-500 rounded-full">
+        <div class="content space-y-2">
+            <p class="flex items-center w-16 h-8 px-4 text-gray-50 text-xl bg-indigo-500 rounded-full">
                 <span id="grade">N</span>
                 <span>年</span>
             </p>
@@ -42,9 +43,14 @@
             </p>
         </div>
 
+        <div class="skeleton animate-pulse space-y-2">
+            <p class="w-16 h-8 px-4 bg-gray-300 rounded-full"></p>
+            <p class="h-10 w-32 bg-gray-300 rounded-md"></p>
+        </div>
+
         <div class="px-4 py-4 bg-gray-50 rounded-md shadow-md">
             <h2 class="text-indigo-500 text-2xl font-bold">SUMMARY</h2>
-            <div class="grid grid-cols-2 items-center gap-y-2 px-2 py-4">
+            <div class="content grid grid-cols-2 items-center gap-y-2 px-2 py-4">
                 <p class="text-lg">
                     出席率
                 </p>
@@ -68,6 +74,17 @@
                     <span id="absence-consecutive">N</span>
                     <span class="text-lg">回</span>
                 </p>
+            </div>
+
+            <div class="skeleton animate-pulse w-full grid grid-cols-2 items-center gap-y-2 px-2 py-4">
+                <p class="w-16 h-6 bg-gray-300 rounded-md"></p>
+                <p class="w-20 h-10 bg-gray-300 rounded-md justify-self-end"></p>
+
+                <p class="w-16 h-6 bg-gray-300 rounded-md"></p>
+                <p class="w-20 h-10 bg-gray-300 rounded-md justify-self-end"></p>
+
+                <p class="w-20 h-6 bg-gray-300 rounded-md"></p>
+                <p class="w-20 h-10 bg-gray-300 rounded-md justify-self-end"></p>
             </div>
 
             <div class="ac-button flex items-center justify-end py-2">
@@ -127,10 +144,15 @@
 
         <div class="px-4 py-4 bg-gray-50 rounded-md shadow-md">
             <h2 class="text-indigo-500 text-2xl font-bold">SCORE</h2>
-            <div class="py-4">
+            <div class="content py-4">
                 <p id="total-score" class="text-3xl font-semibold text-end">
                     0
                 </p>
+
+            </div>
+
+            <div class="skeleton animate-pulse py-4 flex items-center justify-end">
+                <p class="w-20 h-10 bg-gray-300 rounded-md"></p>
             </div>
 
             <div class="ac-button flex items-center justify-end py-2">
@@ -225,8 +247,18 @@
 
         <div class="px-4 py-4 bg-gray-50 rounded-md shadow-md">
             <h2 class="text-indigo-500 text-2xl font-bold">ATTENDANCE</h2>
-            <div id="date-card-container" class="flex flex-col items-center gap-2 w-full px-2 py-4">
+            <div id="date-card-container" class="content flex flex-col items-center gap-2 w-full px-2 py-4">
                 <!-- ここに出席のカードが並ぶ -->
+            </div>
+
+            <div class="skeleton animate-pulse flex flex-col items-center gap-2 w-full px-2 py-4">
+                <div class="w-full h-8 bg-gray-300 rounded-md"></div>
+                <div class="w-full h-8 bg-gray-300 rounded-md"></div>
+                <div class="w-full h-8 bg-gray-300 rounded-md"></div>
+                <div class="w-full h-8 bg-gray-300 rounded-md"></div>
+                <div class="w-full h-8 bg-gray-300 rounded-md"></div>
+                <div class="w-full h-8 bg-gray-300 rounded-md"></div>
+                <div class="w-full h-8 bg-gray-300 rounded-md"></div>
             </div>
         </div>
 

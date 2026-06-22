@@ -2,6 +2,7 @@ import { GetMember } from "./api.js";
 import { loadTemplate } from "./loader.js";
 
 document.addEventListener("DOMContentLoaded",() => {
+    SwitchSkeleton(false);
     UI();
     Accordion();
 });
@@ -41,6 +42,7 @@ async function UI() {
 
     Attendance();
 
+    SwitchSkeleton(true);
 }
 
 async function Attendance(){
@@ -88,5 +90,17 @@ function Accordion(){
                 icon.classList.add("open");
             }
         });
+    });
+}
+
+function SwitchSkeleton(isContentVisible){
+    const skeletons = document.querySelectorAll(".skeleton");
+    skeletons.forEach(el => {
+        el.classList.toggle("hidden",isContentVisible);
+    });
+
+    const contents = document.querySelectorAll(".content");
+    contents.forEach(el => {
+        el.classList.toggle("hidden",!isContentVisible);
     });
 }

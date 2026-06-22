@@ -1,6 +1,6 @@
 <template>
-    <li data-member-id="" class="member-card grid grid-cols-[48px_1fr_48px] items-center gap-4 px-4 py-2 hover:bg-gray-50 cursor-pointer">           
-        <div class="text-center bg-yellow-200 rounded-sm text-sm">
+    <li data-member-id="" class="member-card grid grid-cols-[48px_1fr_48px_24px] items-center gap-4 w-full h-16 px-2 py-2 hover:bg-gray-50 cursor-pointer">           
+        <div id="grade-chip" class="text-center rounded-full text-sm">
             <span id="grade">N</span>
             <span>年</span>
         </div>
@@ -12,5 +12,8 @@
         <p id="score" class="text-right text-lg">
             0.0
         </p>
+        <div class="flex items-center justify-center size-8 rounded-full">
+            <img src="images/icons/right_arrow.png" class="size-4">
+        </div>
     </li>
 </template>
